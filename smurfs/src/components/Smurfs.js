@@ -4,6 +4,49 @@ import {getUser} from "../store/actions/getUsersAction";
 import {postUser} from "../store/actions/postUserAction";
 import Loader from "react-loader-spinner";
 import styled from 'styled-components';
+
+const UserCard = styled.div`
+    width: 270px;
+    // box-shadow: 0 0 10px 5px lightgray;
+    background-color: #F8F9F7;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    &:hover {
+        background: ${props => (props.primary ? "#457B9D" : "#fff")};
+        color: ${props => (props.primary ? "#fff" : "#457B9D")};
+        border: ${props =>
+        props.primary ? "2px solid #2a2223" : "2px solid #457B9D"};
+        }
+    button {
+        display:felx;
+        align-self: center;
+        width: 100px;
+        height: 30px;
+        background: ${props => (props.primary ? "#FFF" : "#457B9D")};
+        color: ${props => (props.primary ? "#457B9D" : "#FFF")};
+        border: 0;
+        margin: 5px 10px;
+        transition: 0.2s ease-in;
+        border: ${props =>
+            props.primary ? "2px solid #99f3eb" : "2px solid #457B9D"};
+        &:hover {
+            background: ${props => (props.primary ? "#457B9D" : "#fff")};
+            color: ${props => (props.primary ? "#fff" : "#457B9D")};
+            border: ${props =>
+            props.primary ? "2px solid #2a2223" : "2px solid #457B9D"};
+  }
+    }
+    div {
+
+        h2, p {
+            color: #457B9D;
+            margin: 5px;
+            text-decoration: none;
+        }
+`;
+
 const Container = styled.div `
     text-align: center;
     button {
@@ -101,11 +144,11 @@ const Smurfs = (props) => {
                 <Loader type="Puff" color="#00BFFF" height={100} width={100} timeout={5000}/>
             ) && props.userList.map(user => {
                 return(
-                    <div key={user.id}>
+                    <UserCard key={user.id}>
                         <h1>{user.name}</h1>
                         <h2>{user.height}</h2>
                         <h3>{user.age}</h3>
-                    </div>
+                    </UserCard>
                 )
             })}
             <button onClick={props.getUser}>GET SMURFED</button>

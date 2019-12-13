@@ -23,10 +23,15 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+  <!-- The Context API makes data available to any component that needs it with out passing it down via prop drilling.-->
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+  <!-- ACTIONS are controlled triggers that tell the store that an event hsa accured in the UI and it has action data with it thats requesting data! REDUCERS are a way to abstract state logic out of your components and makes it easier to debug and manage state.  store is where all the state data lives that can be retreaved by any compoent via connect. The store is a single source of truth because it is dynamic and predictable place where all our data lives and all the components trust that they are getting all up to date data from it-->
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+  <!-- Application state is something like redux that is a single source of truth for all the components needing state, and Component state is state thats at teh component level that handles for example forms and inputs. We dont need redux to manage input state as that can be managed in any component that needs it. -->
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+<!-- Redux thunk is a middle whare that makes our action asyinc. It checks what kind of data our action creators are passing and it decides what to do with that action, for example call diffrent action (loader spinner while waiting for API) -->
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+<!-- I like redux, I hope I use it again in the future because it allows me to have a bigger picture of what my app is doing and it makes it easy for me to add features and debug. -->
 
 ## Project Set Up
 
