@@ -48,7 +48,8 @@ const UserCard = styled.div`
 `;
 
 const Container = styled.div `
-    text-align: center;
+    display: flex;
+    align-items: center;
     button {
         max-width: 100%;
         width: 250px;
